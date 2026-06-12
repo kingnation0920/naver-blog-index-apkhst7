@@ -1,1 +1,4 @@
-# naver-blog-index-apkhst7
+# 어제보다 행복한 오늘 사람과성장 블로그 글 모음 (Vercel)
+
+네이버 블로그(`m.blog.naver.com/apkhst7`)의 RSS 피드를 자동으로 읽어와 최신 글 목록을 보여주는
+Next.js 사이트입니다. 글을 새로 쓰면 1시간 이내에 이 사이트도 자동으로 갱신됩니다.
