@@ -29,7 +29,7 @@ async function getPosts() {
       const link = item.link ?? "#";
       const slug = getPostSlug(link);
       return {
-        title: typeof item.title === "string" ? item.title : item.title?.["#text"] ?? "(ì ëª© ìì)",
+        title: typeof item.title === "string" ? item.title : item.title?.["#text"] ?? "(제목 없음)",
         link,
         slug,
         content: typeof item.description === "string" ? item.description : item.description?.["#text"] ?? "",
@@ -45,7 +45,7 @@ export default async function Home() {
   const posts = await getPosts();
   return (
     <main style={{ maxWidth: 720, margin: "0 auto", padding: "40px 20px 80px" }}>
-      <h1 style={{ fontSize: 22, fontWeight: 700, marginBottom: 32 }}>ë¸ë¡ê·¸ í¬ì¤í¸ ëª©ë¡</h1>
+      <h1 style={{ fontSize: 22, fontWeight: 700, marginBottom: 32 }}>블로그 포스트 목록</h1>
       <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
         {posts.map((post, i) => (
           <li key={i} style={{ marginBottom: 28, paddingBottom: 28, borderBottom: "1px solid #eee" }}>
@@ -61,7 +61,7 @@ export default async function Home() {
             )}
             {post.content && (
               <p style={{ margin: "8px 0 0", fontSize: 14, color: "#555", lineHeight: 1.6 }}>
-                {stripHtml(post.content).slice(0, 120)}{stripHtml(post.content).length > 120 ? "â¦" : ""}
+                {stripHtml(post.content).slice(0, 120)}{stripHtml(post.content).length > 120 ? "…" : ""}
               </p>
             )}
           </li>
